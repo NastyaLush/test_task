@@ -10,4 +10,4 @@ RUN pip install requests python-dotenv selenium beautifulsoup4 python-dateutil p
 COPY . /src
 
 
-CMD ["python", "second.py"]
+CMD ["python", "script.py"]

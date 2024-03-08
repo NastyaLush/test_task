@@ -158,7 +158,8 @@ def get_articles_from_page(driver, lock):
         # link: str
         article, link = get_article(a)
         articles_list.append(article)
-        #
+        # if len(articles_list)==2:
+        #     return articles_list
     return articles_list
 
 
