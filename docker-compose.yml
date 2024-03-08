@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  postgres:
+    container_name: test_task_db
+    image: postgres:14.8-alpine3.18
+    environment:
+      POSTGRES_DB: "${POSTGRES_DB}"
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ../2. Init Database:/docker-entrypoint-initdb.d
+      - article-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  article-data:
